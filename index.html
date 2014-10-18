@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Omnisearch Demo</title>
+
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+		<link href="css/omnisearch.css" rel="stylesheet">
+		<link href="css/demo.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div class="page-header">
+
+				<div class="form-group">
+					<div class="input-group">
+						<div class="overlay"></div>
+						<input type="email" class="form-control input-lg search-input" placeholder="Try a name, location, or birth date">
+						<span class="input-group-btn">
+							<button class="btn btn-success input-lg" type="button"><i class="fa fa-search"></i> Search</button>
+						</span>
+					</div>
+					<div class="input-group search-snippets">
+						<ul class="list-unstyled search-results">
+							<li class="hide"><i class="fa fa-flag"></i>John O'Grouts <span>See the entries about the highland town in Scotland, UK (65 entries)</span></li>
+							<li class="hide"><i class="fa fa-user"></i>Joanna Jacobson <span>Search for women with this name in the UK (652 entries)</span></li>
+							<li class="hide"><i class="fa fa-user"></i>Josephine Baker <span>Search for women with this name in the UK (239 entries)</span></li>
+							<li class="hide"><i class="fa fa-home"></i>St. John's Road <span>Discover the street with this name in London, UK (562 entries)</span></li>
+							<li class="hide"><i class="fa fa-globe"></i>John O'Grouts <span>See the entries about the highland town in Scotland, UK (65 entries)</span></li>
+							<li class="hide"><i class="fa fa-tree"></i>John O'Grouts <span>See the entries about the highland town in Scotland, UK (65 entries)</span></li>
+							<li class="hide"><i class="fa fa-user"></i>John O'Grouts <span>See the entries about the highland town in Scotland, UK (65 entries)</span></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+		<script>
+
+			$(document).ready(function() {
+
+				$('.search-input').on("keyup", function(){
+
+					var q = $(this).val();
+					var list = $('.search-results li');
+
+					if ( q.length > 1 ) {
+
+						_.each(list, function(li){
+							$(li).addClass('hide');
+							if ( $(li).text().toLowerCase().indexOf(q.toLowerCase()) !== -1 ) {
+								$(li).removeClass('hide');
+							}
+						});
+
+						var words = q.split(' ');
+						var sentence = [];
+
+						_.each(words, function(word, index){
+
+							var icon;
+
+							switch (word.toLowerCase()) {
+								case "brian":
+								case "rhea":
+								case "john":
+									icon = "user";
+									break;
+								case "born":
+									icon = "calendar";
+									break;
+								default:
+									icon = "question";
+							}
+
+							var word = "<span class='span-wrapper'><i class='fa fa-" + icon + "'></i><span class='span-content'>" + word + "</span></span>";
+							sentence.push(word);
+						});
+
+						$('.overlay').html(sentence.join(' '));
+
+						$('.search-input').css('padding-left', '51px');
+
+					} else {
+						$('.overlay').html('');
+						$('.search-input').css('padding-left', '0px');
+					}
+
+
+
+				});
+
+			});
+
+		</script>
+	</body>
+</html>

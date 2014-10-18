@@ -1,0 +1,143 @@
+.page-header {
+	border-bottom: 0;
+	margin-top: 30%;
+}
+
+.input-lg {
+	border-radius: 0;
+}
+
+.btn-success {
+	padding-right: 40px;
+	padding-left: 40px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.search-input {
+	font-style: italic;
+	font-family: "Georgia";
+	box-shadow: none;
+	border-left: none;
+	border-top: none;
+	border-bottom: 1px solid #ccc;
+	word-spacing: 47px;
+	font-size: 30px;
+	position: relative;
+	background-color: transparent;
+}
+
+.search-input:focus {
+	box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+   word-spacing: normal;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   word-spacing: normal;
+}
+
+:-ms-input-placeholder {
+   word-spacing: normal;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 7px 16px 10px 10px;
+	font-family: "Georgia";
+	font-style: italic;
+	font-size: 30px;
+	height: 46px;
+	line-height: 1.33;
+}
+
+.overlay .span-wrapper {
+	position: relative;
+	border: 1px dotted #999;
+	padding: 1px 5px 1px 40px;
+	top: -4px;
+	margin-right: 0;
+	border-radius: 20px 6px 6px 20px;
+}
+
+.overlay .span-wrapper .fa {
+	position: absolute;
+	z-index: 5000;
+	cursor: pointer;
+	font-size: 16px;
+	left: -1px;
+	top: -1px;
+	color: #fff;
+	padding: 11px;
+	border-radius: 50px;
+	width: 38px;
+	height: 38px;
+	text-align: center;
+}
+
+.overlay .span-content {
+	visibility: hidden;
+}
+
+.search-snippets {
+	width: 100%;
+	border-right: 1px solid #fff;
+}
+
+.search-snippets li {
+	background-color: #ece9e1;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.search-snippets li span {
+	font-size: 13px;
+	color: #aaa;
+}
+
+.search-snippets li .fa {
+	width: 4%;
+	text-align: center;
+	font-size: 14px;
+}
+
+.fa-flag,
+.fa-map-marker {
+	color: #9b59b6;
+}
+
+.fa-home,
+.fa-tree {
+	color: #27ae60;
+}
+.fa-globe,
+.fa-user {
+	color: #569fcf;
+}
+
+.overlay .fa {
+	background-color: #acacac;
+}
+
+.overlay .fa-flag,
+.overlay .fa-map-marker {
+	background-color: #9b59b6;
+}
+
+.overlay .fa-home,
+.overlay .fa-tree {
+	background-color: #27ae60;
+}
+.overlay .fa-globe,
+.overlay .fa-user {
+	background-color: #569fcf;
+}
+
+.overlay .fa-calendar {
+	background-color: #f39c12;
+}
