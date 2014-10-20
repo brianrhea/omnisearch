@@ -21,7 +21,7 @@
 	border-left: none;
 	border-top: none;
 	border-bottom: 1px solid #ccc;
-	word-spacing: 47px;
+	word-spacing: 10px;
 	font-size: 30px;
 	position: relative;
 	background-color: transparent;
@@ -29,6 +29,7 @@
 
 .search-input:focus {
 	box-shadow: none;
+	border-bottom: 1px solid #ccc;
 }
 
 ::-webkit-input-placeholder {
@@ -59,24 +60,31 @@
 .overlay .span-wrapper {
 	position: relative;
 	border: 1px dotted #999;
-	padding: 1px 5px 1px 40px;
+	padding: 1px 4px;
 	top: -4px;
-	margin-right: 0;
-	border-radius: 20px 6px 6px 20px;
+	margin-right: 1px;
+	border-radius: 6px;
+}
+
+.overlay .span-wrapper.no-icon {
+	border: none;
+	background-color: #fff;
+	opacity: .5;
+	z-index: 1001;
 }
 
 .overlay .span-wrapper .fa {
 	position: absolute;
 	z-index: 5000;
 	cursor: pointer;
-	font-size: 12px;
-	left: -1px;
-	top: -1px;
+	font-size: 10px;
+	left: 8px;
+	top: -17px;
 	color: #fff;
-	padding: 11px;
-	border-radius: 50px;
-	width: 28px;
-	height: 28px;
+	padding: 5px;
+	border-radius: 50px 50px 0 0;
+	width: 30px;
+	height: 17px;
 	text-align: center;
 }
 
@@ -124,18 +132,38 @@
 	background-color: #acacac;
 }
 
+.overlay .span-wrapper.flag,
+.overlay .span-wrapper.map-marker {
+	border-color: #9b59b6;
+}
+
 .overlay .fa-flag,
 .overlay .fa-map-marker {
 	background-color: #9b59b6;
+}
+
+.overlay .span-wrapper.home,
+.overlay .span-wrapper.tree {
+	border-color: #27ae60;
 }
 
 .overlay .fa-home,
 .overlay .fa-tree {
 	background-color: #27ae60;
 }
+
+.overlay .span-wrapper.globe,
+.overlay .span-wrapper.user {
+	border-color: #569fcf;
+}
+
 .overlay .fa-globe,
 .overlay .fa-user {
 	background-color: #569fcf;
+}
+
+.overlay .span-wrapper.calendar {
+	border-color: #f39c12;
 }
 
 .overlay .fa-calendar {
